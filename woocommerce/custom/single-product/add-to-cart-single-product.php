@@ -12,6 +12,15 @@ if (get_field('product_title')) {
 }?>
 </p>
 <p class="right-sidebar-product-price"><?php echo $product->get_price_html();
+if (get_the_terms('', "product_cat")[0]->name == 'Pressure') {
+    ?>
+<select name="cablelength" id="cablelength">
+<option value="1M">1M</option>
+<option value="5M">5M</option>
+<option value="10M">10M</option>
+</select>
+<?php
+}
 if ($product->get_type() == 'grouped') {
     global $product;
 
@@ -31,12 +40,25 @@ if ($product->get_type() == 'grouped') {
 
 <div class="mjvariationtable">
     <div class="single_variation_wrap">
+    <?php
+if (get_the_terms('', "product_cat")[0]->name == 'Wind Energy') {
+    ?>
+<div class="customization-box">
+                             <h5>Contact for custom order </h5>
+                             <a href="#" class="btn rounded">
+                                 Contact US
+                             </a>
+                            </div>
+                            <div class="right-side-pricing-section">
 
-    <div class="right-side-pricing-section">
-<?php do_action('woocommerce_single_variation');
-if ($product->get_type() != 'grouped') {
-    wc_get_template('custom/single-product/simple.php');
+
+<?php
+} else {do_action('woocommerce_single_variation');
+    if ($product->get_type() != 'grouped') {
+        wc_get_template('custom/single-product/simple.php');
+    }
 }
+
 ?>
 </div>
 

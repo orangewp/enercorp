@@ -64,5 +64,14 @@ function mj_widgets() {
         'before_title' => '<h5>',
         'after_title' => '</h5>',
     ]);
+    register_sidebar([
+        'name' => __('Blog Sidebar', 'enercorp'),
+        'id' => 'mj_blog_sidebar',
+        'description' => __('Blog Sidebar', 'enercorp'),
+        'before_widget' => '<div id="%1$s" class="col %2$s">',
+        'after_widget' => '</div>',
+        'before_title' => '<h5>',
+        'after_title' => '</h5>',
+    ]);
 }
 ?>

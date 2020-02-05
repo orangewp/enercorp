@@ -20,9 +20,12 @@ if (function_exists('yoast_breadcrumb')) {
 .product-card{
     background:#e9eff2 !important;
     border:1px solid #018ab9;
+    height:100%;
 }
 .product-card p{
     padding:10px;
+    line-height:1.4;
+    font-size:12px;
 }
 .product-card .marker{
     content:"";
@@ -56,7 +59,9 @@ width: 100%;
 }?>
     </div>
 <div class="row">
-<div class="col-md-4"><div class="product-card">
+<div class="col-md-4">
+<a href="<?php the_field('col-1-link')?>">
+<div class="product-card">
 <img src="<?php if (get_field('col-1-img')) {
     the_field('col-1-img');
 }?>" alt="">
@@ -67,8 +72,12 @@ width: 100%;
 <p><?php if (get_field('col-1-description')) {
     the_field('col-1-description');
 }?></p>
-</div></div>
-<div class="col-md-4"><div class="product-card">
+</div>
+</a>
+</div>
+<div class="col-md-4">
+<a href="<?php the_field('col-2-link')?>">
+<div class="product-card">
 <img src="<?php if (get_field('col-2-img')) {
     the_field('col-2-img');
 }?>" alt="">
@@ -79,8 +88,12 @@ width: 100%;
 <p><?php if (get_field('col-2-description')) {
     the_field('col-2-description');
 }?></p>
-</div></div>
-<div class="col-md-4"><div class="product-card">
+</div>
+</a>
+</div>
+<div class="col-md-4">
+<a href="<?php the_field('col-3-link')?>">
+<div class="product-card">
 <img src="<?php if (get_field('col-3-img')) {
     the_field('col-3-img');
 }?>" alt="">
@@ -91,12 +104,16 @@ width: 100%;
 <p><?php if (get_field('col-3-description')) {
     the_field('col-3-description');
 }?></p>
-</div></div>
+</div>
+</a>
+</div>
 </div>
 
 <div class="spacer"></div>
 <div class="row justify-content-md-center">
-<div class="col-md-4"><div class="product-card">
+<div class="col-md-4">
+<a href="<?php the_field('col-4-link')?>">
+<div class="product-card">
 <img src="<?php if (get_field('col-4-img')) {
     the_field('col-4-img');
 }?>" alt="">
@@ -107,19 +124,25 @@ width: 100%;
 <p><?php if (get_field('col-4-description')) {
     the_field('col-4-description');
 }?></p>
-</div></div>
-<div class="col-md-4"><div class="product-card">
-<img src="<?php if (get_field('col-4-img')) {
-    the_field('col-4-img');
+</div>
+</a>
+</div>
+<div class="col-md-4">
+<a href="<?php the_field('col-5-link')?>">
+<div class="product-card">
+<img src="<?php if (get_field('col-5-img')) {
+    the_field('col-5-img');
 }?>" alt="">
 <div class="marker"></div>
-<h5><?php if (get_field('col-4-title')) {
-    the_field('col-4-title');
+<h5><?php if (get_field('col-5-title')) {
+    the_field('col-5-title');
 }?></h5>
-<p><?php if (get_field('col-4-description')) {
-    the_field('col-4-description');
+<p><?php if (get_field('col-5-description')) {
+    the_field('col-5-description');
 }?></p>
-</div></div>
+</div>
+</a>
+</div>
 </div>
 
 <div class="spacer"></div>

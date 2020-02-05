@@ -89,10 +89,10 @@ if (function_exists('yoast_breadcrumb')) {
 </div></div></div>
 <?php
 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-$params = array('posts_per_page' => 2, 'post_type' => 'product', 'paged' => $paged);
+$params = array('posts_per_page' => 8, 'post_type' => 'product', 'paged' => $paged);
 if (isset($_GET['sku'])) {
     if ($_GET['sku'] != null) {
-        $params = array('posts_per_page' => 2, 'post_type' => 'product', 's' => $_GET['sku'], 'paged' => $paged);
+        $params = array('posts_per_page' => 8, 'post_type' => 'product', 's' => $_GET['sku'], 'paged' => $paged);
         ?>
         <div class="container">
         <div class="row">
@@ -114,42 +114,42 @@ $wc_query = new WP_Query($params);
      <?php if ($wc_query->have_posts()): ?>
      <?php while ($wc_query->have_posts()):
     $wc_query->the_post();?>
-																																																																																																																    <li>
-																																																																																																																    <div class="row product-card">
-																																																																																																																    <div class="col-md-5">
-																																																																																																										                            <a href="<?php the_permalink();?>">
-																																																																																																																		              <h3> <?php the_title();?></h3>
-																																																																																																																		               </a>
-																																																																																																																		          </h3>
-																																																																																																														                          <?php the_excerpt();?>
-																																																																																																																    <a href="<?php the_permalink();?>">
-																																																																																																																    <?php the_post_thumbnail();?>
-																																																																																																																    </a>
-																																																																																																																    </div>
-																																																																																																															        <div class="col-md-7">
-																																																																																																		                                                            <ul class="product-details"><?php
+																																																																																																																	    <li>
+																																																																																																																	    <div class="row product-card">
+																																																																																																																	    <div class="col-md-5">
+																																																																																																											                            <a href="<?php the_permalink();?>">
+																																																																																																																			              <h3> <?php the_title();?></h3>
+																																																																																																																			               </a>
+																																																																																																																			          </h3>
+																																																																																																															                          <?php the_excerpt();?>
+																																																																																																																	    <a href="<?php the_permalink();?>">
+																																																																																																																	    <?php the_post_thumbnail();?>
+																																																																																																																	    </a>
+																																																																																																																	    </div>
+																																																																																																																        <div class="col-md-7">
+																																																																																																			                                                            <ul class="product-details"><?php
     if (get_field('product_summary')) {
         ?> <a href="<?php the_field('product_summary');?>"> <li><i class="fa fa-file-alt"></i> Product Summary</li></a>
-																																																																																															   <?php }
+																																																																																																   <?php }
     ?>
-																																																																																													<?php
+																																																																																														<?php
     if (get_field('specs_manual')) {
         ?> <a href="<?php the_field('specs_manual');?>"> <li><i class="fa fa-info-circle"></i> Specs Manual</li></a>
-																																																																																															   <?php }
+																																																																																																   <?php }
     ?>
-																																																																																												    <?php
+																																																																																													    <?php
     if (get_field('product_certificate')) {
         ?> <a href="<?php the_field('product_certificate');?>"> <li><i class="fa fa-certificate"></i> Product Certificate</li></a>
-																																																																																															   <?php }
+																																																																																																   <?php }
     ?>
-																														</ul>
-																														<h3>
+																															</ul>
+																															<h3>
 
-																														</div>
-																														</div>
-																														</li>
+																															</div>
+																															</div>
+																															</li>
 
-																														<?php endwhile;?>
+																															<?php endwhile;?>
                                                                                                                     <div class="navigators">
 <?php previous_posts_link(' Previous');
 next_posts_link(' Next', $wc_query->max_num_pages)?>

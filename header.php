@@ -9,11 +9,17 @@
 </head>
 <body>
 <div id="content">
-    <section class="top-bar border-bottom">
+ <div class="white-bg sticky-top">
+ <section class="top-bar border-bottom">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-4">
-                    <i class="fas fa-search"></i><input type="text" placeholder="Search">
+                <form class="form-inline"  action="<?php echo get_home_url(); ?>/search?" method="GET">
+  <div class="form-group mx-sm-3 mb-2">
+    <label for="search" class="sr-only">Search Term</label>
+    <input type="text" class="form-control" name='term' id="search" placeholder="Search Term">
+  </div>
+</form>
                 </div>
                 <div class="col-4 text-grey border-right">
                     <div class="row">
@@ -39,12 +45,12 @@ if (get_theme_mod('mj_header_second_text')) {
                         </div>
                     </div>
                 </div>
-                <div class="col-2 border-right text-center signintab">Signin | Create</div>
-                <div class="col-2"> <i class="fas fa-shopping-cart"></i> Cart | 0 Items</div>
+                <div class="col-2 border-right text-center signintab"><a href="<?php echo home_url('/') ?>my-account">Sign in | Create</a></div>
+                <div class="col-2"> <i class="fas fa-shopping-cart"></i><a href="<?php echo home_url('/') ?>cart"> Cart</a></div>
             </div>
         </div>
     </section>
-    <section class="menu sticky-top">
+    <section class="menu ">
         <div class="container">
             <div class="row">
                 <div class="col-2 align-items-center logo-image">
@@ -72,3 +78,4 @@ if (has_nav_menu('primary')) {
             </div>
         </div>
     </section>
+ </div>
